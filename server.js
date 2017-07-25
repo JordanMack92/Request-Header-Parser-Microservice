@@ -8,6 +8,7 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
+var routes = require('./app/timestamp.js');
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -23,6 +24,8 @@ if (!process.env.DISABLE_XORIGIN) {
 }
 
 app.use('/public', express.static(process.cwd() + '/public'));
+app.use('/app', express.static(process.cwd()+'/app'));
+
 
 app.route('/_api/package.json')
   .get(function(req, res, next) {
@@ -33,10 +36,10 @@ app.route('/_api/package.json')
     });
   });
   
-app.route('/')
+/*app.route('/')
     .get(function(req, res) {
 		  res.sendFile(process.cwd() + '/views/index.html');
-    })
+    })*/
 
 // Respond not found to all the wrong routes
 app.use(function(req, res, next){
@@ -52,6 +55,8 @@ app.use(function(err, req, res, next) {
       .send(err.message || 'SERVER ERROR');
   }  
 })
+
+routes(app);
 
 app.listen(process.env.PORT, function () {
   console.log('Node.js listening ...');
