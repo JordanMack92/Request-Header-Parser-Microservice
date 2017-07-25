@@ -1,7 +1,9 @@
 {
 	"name": "fcc-learn-npm-package-json",
 	"dependencies": {
-		"express": "^4.14.0"
+		"express": "^4.14.0",
+    "moment": "3.10.10"
+
 	},
 	"main": "server.js",
 	"scripts": {

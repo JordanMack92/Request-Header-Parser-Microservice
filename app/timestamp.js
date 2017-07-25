@@ -21,12 +21,12 @@ module.exports = function(app){
     
     if (Number(query)) {
       json.unix = query;
-      json.natural = moment.unix(query).format("MMMM Do, YYYY");
+      json.natural = moment.unix(query).format("MMMM D, YYYY");
     }
     
     else {
-      json.natural = query;
       var date = new Date(query);
+      json.natural = moment(date).format("MMMM D, YYYY");
       json.unix = (date.getTime()/1000).toFixed(0);
     }
     
