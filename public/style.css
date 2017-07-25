@@ -3,12 +3,19 @@
 #user-stories{
   border-left: 5px solid gray;
   width: 70%;
-  
   text-align: left;
 }
 
 #user-stories-text{
   margin: 3%;
+}
+
+code{
+  text-align: center;
+}
+
+h3, p{
+  text-align: left;
 }
 
 li {
@@ -24,7 +31,7 @@ body {
 	font-size: 16px;
 	color: #222;
 	
-	text-align: center;
+	text-align: left;
 }
 
 .container {
