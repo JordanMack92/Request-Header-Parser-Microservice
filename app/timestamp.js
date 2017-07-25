@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 module.exports = function(app){
   
   var json = {
@@ -17,23 +19,17 @@ module.exports = function(app){
     }
     
     if (Number(query)) {
-      var unix = query;
-      unixToNatural(query);
+      json.unix = query;
+      json.natural = moment.unix(query).format("MMMM Do, YYYY");
     }
     
     else {
-      var natural = query;
-      naturalToUnix(query);
+      json.natural = query;
+      var date = new Date(query);
+      json.unix = (date.getTime()/1000).toFixed(0);
     }
     
-    function unixToNatural(query){
-      
-    }
-    
-    function naturalToUnix(query){
-      var unix = query.getTime();
-    }
-    
+    res.send(json);
     
   });
   
