@@ -25,7 +25,7 @@ if (!process.env.DISABLE_XORIGIN) {
 
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/app', express.static(process.cwd()+'/app'));
-
+routes(app);
 
 app.route('/_api/package.json')
   .get(function(req, res, next) {
@@ -36,10 +36,10 @@ app.route('/_api/package.json')
     });
   });
   
-app.route('/')
+/*app.route('/')
     .get(function(req, res) {
 		  res.sendFile(process.cwd() + '/views/index.html');
-    });
+    });*/
 
 // Respond not found to all the wrong routes
 app.use(function(req, res, next){
@@ -56,7 +56,7 @@ app.use(function(err, req, res, next) {
   }  
 })
 
-routes(app);
+
 
 app.listen(process.env.PORT, function () {
   console.log('Node.js listening ...');
