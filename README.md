@@ -1,6 +1,5 @@
-# Timestamp Microservice
+# Request Header Parser Microservice
 
 FCC Backend Project
 
-Converts Unix timestamp to natural language
-and vice versa
+Finds and displays user's IP address, language preference, and operating system.
