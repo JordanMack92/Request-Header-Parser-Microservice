@@ -9,14 +9,14 @@ module.exports = function(app){
   
   app.route('/whoami').get(function(req, res){
     var json = {
-    "IP address": null,
+    "IP address": req.headers['x-forwarded-for'].split(",")[0],
     "Language": null,
     "Software": null
   };
     
     
     
-    res.send(json);
+    res.send(req.headers);
     
   });
   
