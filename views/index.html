@@ -3,35 +3,31 @@
 <html>
 
    <head>
-      <title>Timestamp Microservice</title>
+      <title>Parser Microservice</title>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
       <link href="/public/style.css" rel="stylesheet" type="text/css">
    </head>
 
    <body>
       <div class="container">
-         <h1>API Basejump: Timestamp Microservice</h1>
+         <h1>API Basejump: Request Header Microservice</h1>
          
         <div id = "user-stories">
           <div id = "user-stories-text">
           <p>User Stories:</p>
           <ol>
-            <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)</li>
-            <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
-            <li>If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
+            <li>User Story: I can get the IP address, language and operating system for my browser.</li>    
           </ol>
           </div>
         </div>
         
         <div>
-          <h3>Example Input</h3>
-          <a href="https://mack-timestamp.glitch.me/December%2015,%202015" target = "_blank"><code>https://mack-timestamp.glitch.me/December%2015,%202015</code></a>
-          <br>
-          <a href="https://mack-timestamp.glitch.me/1450137600" target = "_blank"><code>https://mack-timestamp.glitch.me/1450137600</code></a>
+          <h3>Link to Service</h3>
+          <a href="https://mack-parser.glitch.me/whoami" target = "_blank"><code>https://mack-parser.glitch.me/whoami</code></a>
         </div>
         <div>
           <h3>Example Output</h3>
-          <code>{ "unix": 1450137600, "natural": "December 15, 2015" }</code>
+          <code>{ "IP address": "255.255.255.255", "Language": "en-US", "Software": "Windows NT 10.0; Win64; x64" }</code>
         </div>
         
         
